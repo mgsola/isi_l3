@@ -268,7 +268,9 @@ enlazar a los términos de esta sección, pero no los definirá de nuevo.
 
 | Término | Definición en Proyecto Simbiosis | Fuente |
 | --- | --- | --- |
-
+| Enfermedad Inflamatoria Intestinal (EII) | Término que engloba patologías digestivas crónicas cuyos pacientes son los usuarios principales del sistema para el control de síntomas mediante dietas adaptadas. | Visión y Alcance 1.1 |
+| Receta Adaptada | Receta filtrada por el sistema que resulta adecuada según las restricciones, alergias y perfil de salud del paciente, sin que el sistema modifique automáticamente sus ingredientes ni cantidades. | Visión y Alcance 1.2 |
+| Receta Validada | Receta creada por un nutricionista o propuesta por un usuario que ha superado la revisión clínica de un nutricionista acreditado antes de ser publicada como tal en la plataforma. | Acta Acuerdos 2.4.1 |
 ## 10. Modelos de análisis
 
 Los modelos hacen visible la interpretación de los requisitos y deben mantener
