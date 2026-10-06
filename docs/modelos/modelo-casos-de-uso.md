@@ -2,7 +2,7 @@
 
 | Versión | Fecha | Estado |
 | --- | --- | --- |
-| 1.3 | 05/10/2026 | Plantilla |
+| 1.3 | 05/10/2026 | Borrador |
 
 **Iteración de referencia:** E1
 
@@ -62,7 +62,7 @@ Para cada vista, incluye un título, una frase sobre su alcance y el diagrama. T
 
 **Alcance:** [Explica qué funciones representa esta vista.]
 
-[Inserta aquí el diagrama.]
+![Casos de uso de acceso cuentas y ayuda](imagenes/casos-de-uso-acceso-cuentas-ayuda.png)
 
 Si una decisión necesita aclaración, puedes añadir una nota breve junto al diagrama.
 
