@@ -4,7 +4,7 @@
 | --- | --- | --- |
 | 1.3 | 05/10/2026 | Plantilla |
 
-**Iteración de referencia:** [Indica la última iteración incorporada al modelo.]
+**Iteración de referencia:** E1
 
 Este documento recoge el modelo de casos de uso del proyecto. Se completa a medida que se incorporan funciones. Los diagramas muestran distintas vistas del mismo modelo.
 
@@ -28,7 +28,9 @@ Registra los roles externos que participan en las funciones representadas. Un ac
 
 | Nombre del actor | Rol que representa |
 | --- | --- |
-| [Nombre] | [Describe el rol externo.] |
+| Usuario | Persona que interactua con el Proyecto simbiosis |
+
+| Usuario Registrado | Persona que dispone de una cuenta en la plataforma |
 
 Mantén los mismos nombres en las tablas, los diagramas y las descripciones.
 
@@ -40,7 +42,7 @@ Registra los casos que aparecen en el modelo. Asigna a cada caso un identificado
 
 | Identificador | Nombre | Objetivo | Participantes |
 | --- | --- | --- | --- |
-| [UC-…] | [Nombre] | [Explica el objetivo.] | [Indica los actores que participan.] |
+| [UC-05] | [Gestionar perfil] | [Gestionar los datos personales y preferencias de la cuenta propia] | Actor principal: Usuario registrado. No se identifica actor de apoyo para este caso |
 
 [Indica los actores que participan. Si procede, distingue el actor principal, que busca alcanzar el objetivo del caso de uso y normalmente inicia la interacción, de los actores de apoyo, que proporcionan servicios o información al sistema.]
 
@@ -98,7 +100,7 @@ En E1 basta con un respaldo breve del diagrama. La tabla permite ampliar la traz
 
 | Elemento del modelo | UR y FR de referencia | NFR pertinentes | Relación con los requisitos |
 | --- | --- | --- | --- |
-| [Caso, actor o relación] | [Identificadores] | [Identificadores, si procede] | [Explica qué respaldan o condicionan.] |
+| UC-05 Gestionar perfil | UR-03; FR-019 | NFR-010 G | FR-019 Permite modificar datos personales y preferencias, pero excluye alias y correo. NFR-010 condiciona la accesibilidad de esta condición. |
 
 Consulta el [catálogo canónico](../requisitos/catalogo-requisitos.md) y la [SRS](../requisitos/srs.md). Si falta una condición, indica que está pendiente de aclaración. No la presentes como un requisito confirmado.
 
