@@ -223,45 +223,97 @@ Los apartados 6.1 y 6.2 corresponden a las descripciones detalladas de UC-05 y U
 
 ### 6.1 Descripción detallada UC-05 — Actualizar perfil
 
-**Identificador y nombre del caso de uso:** [Indica el caso.]
+**Identificador y nombre del caso de uso:** 
+UC-05 Actualizar perfil.
 
-**Objetivo:** [Explica qué resultado pretende obtener el participante.]
+**Objetivo:** 
+El usuario registrado quiere actualizar su propio perfil y conservar los cambios.
 
-**Participantes:** [Indica el actor principal y los actores de apoyo, si los hay.]
+**Participantes:** 
+Usuario registrado como actor principal.
 
-**Precondiciones:** [Indica qué se da por cumplido al comenzar. Las comprobaciones que realiza el sistema pertenecen al flujo.]
+**Precondiciones:** 
+El usuario está registrado en el sistema y ha iniciado sesión.
 
-**Inicio:** [Indica qué acción o suceso inicia el caso.]
+**Inicio:** 
+El usuario selecciona la opción para modificar sus datos.
 
-**Escenario principal de éxito:** [Describe la secuencia entre los participantes y el sistema.]
+**Escenario principal de éxito:** 
+1. El sistema muestra al usuario registrado los datos que tiene guardados actualmente.
+2. El usuario modifica los datos permitidos que desea actualizar.
+3. El usuario solicita guardar los datos modificados.
+4. El sistema valida los datos introducidos por el usuario según las reglas del acta.
+5. El sistema registra esos datos.
 
-**Extensiones (flujos alternativos):** [Vincula cada variación a un paso. Indica cómo continúa o termina.]
+**Extensiones (flujos alternativos):** 
+4a. Los datos introducidos no son válidos
+1. El sistema lanza un aviso al usuario indicando que campos son incorrectos y explica la condición necesaria.
+2. El flujo de eventos vuelve al punto 2 para corregir los datos actualizados.
+
+2a. El usuario cancela sin guardar los datos modificados
+1. El sistema mantiene los valores anteriores a la modificación en el perfil.
+
+5a. El sistema no puede guardar los datos.
+1. El sistema lanza un aviso indicando que no pudo guardar los datos.
+2. El sistema conserva los valores introducidos por el usuario.
+3. El flujo de eventos vuelve al punto 3 para volver a intentar el guardado.
 
 **Postcondiciones:** [Indica qué queda establecido con éxito y qué se conserva o cambia si el caso termina sin éxito o se cancela. Una consulta no requiere modificar datos para alcanzar su objetivo.]
 
-**Reglas y NFR pertinentes:** [Remite a los requisitos y actas que condicionan el comportamiento.]
-
+**Reglas y NFR pertinentes:** 
+NFR-010. Todas las pantallas y funciones cumplirán con el NFR-010
 **Preguntas abiertas:** [Registra solo las cuestiones necesarias que las fuentes no resuelvan. Si no hay preguntas para el alcance descrito, indícalo.]
 
 ### 6.2 Descripción detallada UC-21 — Buscar recetas
 
-**Identificador y nombre del caso de uso:** [Indica el caso.]
+**Identificador y nombre del caso de uso:** 
+UC-21 - Buscar recetas
 
-**Objetivo:** [Explica qué resultado pretende obtener el participante.]
+**Objetivo:** 
+La persona quiere localizar una receta que cumpla sus criterios y consultar su detalle.
 
-**Participantes:** [Indica el actor principal y los actores de apoyo, si los hay.]
+**Participantes:** 
+Usuario registrado como actor principal.
 
-**Precondiciones:** [Indica qué se da por cumplido al comenzar. Las comprobaciones que realiza el sistema pertenecen al flujo.]
+**Precondiciones:** 
+El usuario está registrado en el sistema y ha iniciado sesión. 
 
-**Inicio:** [Indica qué acción o suceso inicia el caso.]
+**Inicio:** 
+El usuario accede al apartado de búsqueda de recetas.
 
-**Escenario principal de éxito:** [Describe la secuencia entre los participantes y el sistema.]
+**Escenario principal de éxito:** 
+1. El usuario indica al menos un criterio para realizar la busqueda.
+2. El sistema valida que se haya indicado al menos un criterio y que no existan conflictos en los ingredientes seleccionados.
+3. El sistema realiza una búsqueda cumpliendo con todos los criterios especificados por el usuario.
+4. El sistema muestra al usuario el resultado de la búsqueda ordenados por fecha de publicación.
+5. El usuario selecciona un resultado.
+6. El sistema muestra el detalle de esa receta.El detalle muestra título, imagen si existe, ingredientes, instrucciones de preparación, tiempo de cocción, número de porciones, alias de quien la publicó e insignia de validación.
+7. El usuario puede volver a los resultados. Se conservan los criterios y el orden de la última búsqueda.
+8. El usuario puede modificar los criterios y ejecutar otra busqueda
 
-**Extensiones (flujos alternativos):** [Vincula cada variación a un paso. Indica cómo continúa o termina.]
+**Extensiones (flujos alternativos):** 
+2a. Conflicto entre ingredientes incluidos y excluidos:
+1. El sistema detecta que un mismo ingrediente ha sido seleccionado para incluir y excluir simultáneamente.
+2. El sistema señala el conflicto y no realiza la búsqueda.
+3. El flujo de eventos vuelve al paso 1 para que el usuario pueda modificar los criterios.
 
-**Postcondiciones:** [Indica qué queda establecido con éxito y qué se conserva o cambia si el caso termina sin éxito o se cancela. Una consulta no requiere modificar datos para alcanzar su objetivo.]
+3a. Ninguna receta cumple con los criterios de búsqueda.
+1. El sistema indica que no hay resultados para esa búsqueda y conserva los criterios para que el usuario pueda modificarlos.
+
+3b. Fallo de la consulta.
+1. El sistema informa de un problema a la hora de realizar la consulta.
+2. Se conservan los criterios de la última búsqueda.
+3. El flujo de eventos vuelve al punto 1 para que el usuario reintente la consulta.
+
+**Postcondiciones:** 
+
 
 **Reglas y NFR pertinentes:** [Remite a los requisitos y actas que condicionan el comportamiento.]
+Catálogo canónico de requisitos, UR-08; FR-085, FR-086, FR-087, FR-089, FR-099, FR-102 y FR-119:	Texto, ingredientes, exclusiones, vistas previas, orden por fecha, ayuda sin resultados y acceso a búsqueda avanzada.
+
+Mismo catálogo, FR-056, FR-066 y FR-192:	Datos de una receta, insignia de validación e identidad pública mediante alias.
+
+Plan de E2, apartado 4.4:	Recorrido de búsqueda, resultados y consulta del detalle.
 
 **Preguntas abiertas:** [Registra solo las cuestiones necesarias que las fuentes no resuelvan. Si no hay preguntas para el alcance descrito, indícalo.]
 
